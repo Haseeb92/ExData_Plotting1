@@ -17,6 +17,6 @@ power_df <<- mutate(power_df, DateTime = ymd_hms(paste(dmy(power_df$Date),
 
 png('./plot1.png', width = 480, height = 480)
 par(bg = 'transparent')
-hist(power_df$Global_active_power, main = 'Global Active Power (kilowatts)', 
+hist(power_df$Global_active_power, main = 'Global Active Power', 
      col = 'red', xlab = 'Global Active Power')
 dev.off()
