@@ -17,7 +17,8 @@ power_df <<- mutate(power_df, DateTime = ymd_hms(paste(dmy(power_df$Date),
 
 png('./plot3.png', width = 480, height = 480)
 par(bg = 'transparent')
-plot(power_df$DateTime, power_df$Sub_metering_1, col = 'black', type = 'l', xlab='')
+plot(power_df$DateTime, power_df$Sub_metering_1, col = 'black', type = 'l', 
+     xlab='', ylab = 'Energy sub metering')
 lines(power_df$DateTime, power_df$Sub_metering_2, col = 'red')
 lines(power_df$DateTime, power_df$Sub_metering_3, col = 'blue')
 legend('topright', lty = 1, col = c('black', 'red', 'blue'), 
