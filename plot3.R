@@ -15,7 +15,8 @@ power_df <<- read.csv2('./household_power_consumption.txt', dec = '.',
 power_df <<- mutate(power_df, DateTime = ymd_hms(paste(dmy(power_df$Date),
                                                        power_df$Time)))
 
-png('./plot1.png', width = 480, height = 480)
+png('./plot3.png', width = 480, height = 480)
+par(bg = 'transparent')
 plot(power_df$DateTime, power_df$Sub_metering_1, col = 'black', type = 'l', xlab='')
 lines(power_df$DateTime, power_df$Sub_metering_2, col = 'red')
 lines(power_df$DateTime, power_df$Sub_metering_3, col = 'blue')
